@@ -151,9 +151,8 @@ Make sure you have the latest [Xcode](https://developer.apple.com/xcode/) instal
 
 2. I get a build error stating that one of the Facebook SDK files was not found -- eg. `FBSDKLoginKit/FBSDKLoginKit.h file not found`.
 
-  - Make sure that the Facebook SDK frameworks are installed in `~/Documents/FacebookSDK`.
   - Make sure that `FBSDK[Core, Login, Share]Kit.framework` show up in the **Link Binary with Libraries** section of your build target's **Build Phases**.
-  - Make sure that `~/Documents/FacebookSDK` is in the **Framework Search Path** of your build target's **Build Settings**.
+  - Make sure that `$(PROJECT_DIR)/../../../ios/FacebookSDK` is in the **Framework Search Path** of your build target's **Build Settings**.
 
 3. I get build errors like `Warning: Native component for "RCTFBLikeView" does not exist`:
 
@@ -348,8 +347,3 @@ const infoRequest = new GraphRequest(
 // Start the graph request.
 new GraphRequestManager().addRequest(infoRequest).start();
 ```
-## License
-See the LICENSE file.
-
-## Platform Policy
-Developers looking to integrate with the Facebook Platform should familiarize themselves with the [Facebook Platform Policy](https://developers.facebook.com/policy/).
